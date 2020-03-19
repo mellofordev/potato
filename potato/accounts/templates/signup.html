@@ -1,0 +1,44 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Signup</title>
+<style>
+  body{
+      background-image:url(https://images.pexels.com/photos/1007431/pexels-photo-1007431.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+    }
+</style>
+</head>
+<body>
+{% block content %}
+  <h2>Sign up</h2>
+  <div class="w3-container w3-half w3-margin-top">
+  <form method="post">
+    {% csrf_token %}
+    <div class="w3-card">
+
+    <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username"placeholder="Username" class="w3-input" >
+
+    <input type="text" name="name" maxlength="30" required="" id="id_name" placeholder="Name" class="w3-input" >
+
+    <input type="password" name="password1" autocomplete="new-password" required="" id="id_password1" placeholder="Password" class="w3-input" >
+
+    <input type="password" name="password2" autocomplete="new-password" required="" id="id_password2" placeholder="Confirm Password" class="w3-input" >
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+    <button type="submit" class="w3-btn w3-round-xxlarge w3-black">Sign up</button>
+    </div>
+  </form>
+  </div>
+{% endblock %}
+<div class="w3-bottom">
+  <div class="w3-bar ">
+    <a href="#" class="w3-bar-item w3-button">Potato from mello ,Photo credit images.pexels.com  </a>
+
+  </div>
+</div>
+
+</body>
+</html>

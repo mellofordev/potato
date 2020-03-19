@@ -1,0 +1,42 @@
+
+<html>
+<title>Login</title>
+<head>
+<style>
+    body{
+      background-image:url(https://images.pexels.com/photos/1007431/pexels-photo-1007431.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+    }
+    header{
+      background:#191A1D;
+
+    }
+</style>
+{% block content %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<header class="w3-container ">
+  <h1>Potato</h1>
+</header>
+<div class="w3-container w3-half w3-margin-top">
+<form class="w3-container w3-card-4" method="post">
+    <h2>Login</h2>
+
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button class="w3-btn w3-round-xxlarge w3-black" type="submit">Login</button>
+</form>
+    <p>Don't have an account ?</p>
+    <a class="w3-btn w3-round-xxlarge w3-black" href="{% url 'signup' %}">Signup</a>
+</div>
+{% endblock %}
+<div class="w3-bottom">
+  <div class="w3-bar ">
+    <a href="#" class="w3-bar-item w3-button">Potato from mello ,Photo credit images.pexels.com  </a>
+
+  </div>
+</div>
+</body>
+</html>

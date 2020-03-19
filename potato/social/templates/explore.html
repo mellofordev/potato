@@ -1,0 +1,605 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+    <style>
+    body {
+	background:transparent;
+}
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+
+
+.iphone-x .screen {
+	width: auto;
+	height: auto;
+
+	background: #191A1D;
+
+
+}
+
+
+
+
+
+
+
+.top-nav {
+	width: 100%;
+	height: 40px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	background: #191A1D;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+}
+
+.top-nav img{
+	height: 25px;
+	background: transparent;
+	text-align: center;
+}
+li {
+	list-style: none;
+	background: transparent;
+}
+
+.top-nav .fa-bell  {
+	color: #ddd;
+	width: 33px;
+	font-size: 18px;
+	background: transparent;
+}
+
+.top-nav .profile{
+	width: 30px;
+	height: 25px;
+	border: none;
+	background-image: url('http://localhost:8000/media/{{user.profile.pic}}');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 6px;
+}
+
+/* =====SEARCH==== */
+.search {
+	text-align: center;
+	background: transparent;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.search input {
+	color: #fff;
+	width: 85%;
+	margin: 10px auto;
+	border: 0;
+	outline: none;
+	padding: 7px 13px;
+	font-size: 13px;
+	text-align: left;
+	background: #333;
+	border-radius: 7px;
+}
+
+/* PICKED PENS */
+
+.main-container {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	background: #191A1D;
+	overflow: scroll;
+  overflow-x: hidden;
+}
+
+.main-container .title h4 {
+	color: deepskyblue;
+	font-size: 20px;
+	background: transparent;
+	margin-left: 1px;
+	font-weight: 300;
+	letter-spacing: 3px;
+}
+
+.title {
+	width: 95%;
+	margin: 10px auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	background: transparent;
+	border-bottom: 4px solid deepskyblue;
+	padding-bottom: 5px;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+.title a {
+	color: deepskyblue;
+	font-size: 13px;
+	margin-top: 7px;
+	background: transparent;
+	font-weight: 300;
+	margin-right: 1px;
+	letter-spacing: 1px;
+	text-decoration: none;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.picked-pens {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin-top: 10px;
+	background: #191A1D;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+}
+
+.daily_pen {
+	width: 95%;
+	height: auto;
+	margin: 8px auto;
+	background: #111;
+	border-radius: 14px;
+	-webkit-box-shadow: 0 2px 10px #000;
+	        box-shadow: 0 2px 10px #000;
+}
+
+
+.daily_pen:hover .hover {
+	visibility: visible;
+}
+.hover {
+	top: -141px;
+	width: 100%;
+	height: 140px;
+	position: relative;
+	font-size: 13px;
+	text-align: center;
+	visibility: hidden;
+	background: rgba(50,51,59,0.70);
+	border-bottom: 2px solid deepskyblue;
+	border-top-left-radius: 14px;
+	border-top-right-radius: 14px;
+}
+.hover p {
+	top: 20px;
+	color: #fff;
+	width: 95%;
+	margin: auto;
+	position: relative;
+	text-align: left;
+}
+.hover a {
+	top: 95px;
+	color: #fff;
+	padding: 5px;
+	position: relative;
+	background: #000;
+	border-radius: 5px;
+}
+.hover a:hover {
+	background: #222;
+}
+.hover a i {
+	background: transparent;
+}
+.detail {
+	width: 100%;
+	height: auto;
+	bottom: -140px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	position: relative;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	background: #32333B;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+.left-img {
+	background: transparent;
+}
+.left-img img {
+	-webkit-box-flex: 0;
+	    -ms-flex: 0;
+	        flex: 0;
+	height: 30px;
+	margin-top: 5px;
+	margin-left: 5px;
+	border-radius: 15px;
+}
+
+.daily_pen h2 {
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	color: #fff;
+	width: 100%;
+	font-size: 18px;
+	margin-top: 9px;
+	margin-left: 10px;
+	background: transparent;
+}
+.detail p {
+	-webkit-box-flex: 2;
+	    -ms-flex: 2;
+	        flex: 2;
+	width: 100%;
+	color: #999;
+	background: transparent;
+	margin-top: 35px;
+	margin-right: 100px;
+	margin-left: -110px;
+}
+
+.social-icons {
+	top: 108px;
+	width: 92%;
+	height: 30px;
+	margin: 0 auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	position: relative;
+	background: #32333B;
+	border-top: .5px solid #555;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+.social-icons a{
+	color: #A6A9B0;
+	margin: 0px;
+	font-size: 15px;
+	background: transparent;
+	text-decoration: none;
+}
+
+.social-icons i {
+	width: 17px;
+	height: 12px;
+	background: transparent;
+	padding-right:8px;
+}
+
+.liked {
+	color: #fa3380;
+}
+
+/* PENS IMAGES */
+.one {
+
+
+
+	background-size:cover;
+	background-height:100%;
+	background-width:100%;
+	background-position: center;
+	background-repeat: no-repeat;
+
+}
+.ad {
+
+
+
+	background-size:cover;
+	background-height:100%;
+	background-width:100%;
+	background-position: center;
+	background-repeat: no-repeat;
+
+}
+.daily_penad {
+	width: 95%;
+	height: 250px;
+	margin: 8px auto;
+	background: #111;
+	border-radius: 14px;
+	-webkit-box-shadow: 0 2px 10px #000;
+	        box-shadow: 0 2px 10px #000;
+}
+/* PICKED PENS END */
+
+/* BOTTOM NAV  */
+
+
+
+ul {
+	width: 100%;
+	height: 77px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	position: relative;
+	background: #000;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+
+}
+
+ul li {
+	color: #fff;
+	font-size: 20px;
+}
+
+li i {
+	background: transparent;
+}
+
+.create-icon {
+	color: #fff;
+	font-size: 50px;
+}
+
+.projects-icon {
+	color: yellow;
+}
+
+.pens-icon {
+	color: deepskyblue;
+}
+
+.post-icon {
+	color: lightgreen;
+}
+
+.collections-icon {
+	color: violet;
+}
+.wrap {
+  background:#191A1D ;
+  width: 500px;
+  position: relative;
+  height: 50px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  max-height: 50px;
+}
+.inner {
+  position: relative;
+  height:50px;
+  /*width will depend on the total with of the sectioin blocks to contain*/
+  width: 1020px;
+  max-height: 50px;
+  background: white;
+
+}
+
+.logotitle{
+  font-size: 20px;
+  font-family: 'Nixie One', cursive;
+  color: #fff;
+  font-weight: 800;
+  text-align: center;
+  text-transform: capitalize
+  color: lightblue;
+
+}
+.feed {
+    width:auto;
+    height: auto;
+
+    margin: 80px auto;
+    padding-bottom: 10px;
+}
+
+.feed .username {
+    padding: 10px 30px 0px 30px;
+    display: flex;
+    flex-flow: row;
+}
+
+.feed .username .image, .feed .username .image img {
+    width:55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+
+.feed .username a {
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.feed .username .id {
+    margin: 10px 15px;
+    color:#999
+}
+
+.feed .post {
+    width: 100%;
+    height: 300px;
+    margin: 10px 0px;
+}
+
+.feed .post img {
+    width: 100%;
+    height: inherit;
+}
+
+.feed .btn-group {
+    padding: 0px 10px;
+}
+
+.feed .btn-group button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.feed .btn-group .btn-bookmark {
+    float: right;
+}
+
+.feed .caption {
+    font-size: 20px;
+    padding: 0px 20px;
+    color:#999
+}
+
+.feed .caption .like {font-weight: bold;}
+
+.feed .caption .id {
+    color: #999;
+    text-decoration: none;
+}
+
+.feed .caption .time {
+    font-size: 12px;
+    color: #999;
+}
+
+
+
+ </style>
+    </head>
+    <body >
+ <div class="container">
+   <div class="iphone-x">
+      <div class="screen">
+         <!-- Main Screen -->
+         <!-- notch -->
+         <div class="notch">
+            <div class="sound"></div>
+            <div class="camera"></div>
+            <!-- notch End -->
+         </div>
+
+         <i class="fas fa-battery-three-quarters"></i>
+         <div class="top-nav">
+            <li><i class="fas fa-bell"></i></li>
+             <p class="logotitle">Potato</p>
+            <li class="profile"></li>
+         </div>
+         <!-- 	SEARCH 		 -->
+         <div class="search">
+            <input type="text" placeholder="Search">
+         </div>
+         <!-- 	SEARCH END 		 -->
+         <!-- 		PICKED PENS	 -->
+         <div class="main-container">
+            <div class="title">
+
+
+               <a href="#"><i class="fas fa-plus"></i></a>
+            </div>
+             {%for i in hashtag%}
+            <div class="picked-pens">
+               <!-- 		Pen 1			 -->
+
+               <div class="daily_pen one">
+
+                 <div class="feed">
+                    <section class="username">
+                    <div class="image">
+
+                    <a href="{% url 'link' slug=i.slug %}">
+                        <img class="profile" src="http://localhost:8000/media/{{i.image}}">
+                        <p>{{i.hashtags}}</p>
+                    </a>
+                     <div class="caption">
+                    <p class="time">Trending in {{i.hashtags}}</p>
+                    </p>
+                    </div>
+                    </section>
+                     </div>
+
+
+               </div>
+            </div>
+             {%endfor%}
+
+         <!-- 		BOTTOM MENU	 -->
+         <div class="bottom-nav">
+            <ul>
+               <li class="#"></li>
+               <li class="#"></li>
+               <li class="#"></li>
+               <li class="post-icon"></li>
+               <li class="collections-icon"></li>
+            </ul>
+         </div>
+      </div>
+      <!-- Main Screen End -->
+   </div>
+</div>
+ </div>
+
+<!-- FOLLOW  || DO NOT INCLUDE-->
+<div class="w3-bottom">
+  <div class="w3-bar w3-black">
+     <ul>
+         <li><a href="#" class="w3-bar-item w3-button"><i class="material-icons">home</i></a></li>
+
+    <li><a href="{%url 'explore'%}" class="w3-bar-item w3-button"><i class="material-icons">explore</i></a></li>
+
+    <li><a href="{%url 'newpost'%}" class="w3-bar-item w3-button"><i class="material-icons">add_circle</i></a></li>
+
+    <a href="#" class="w3-bar-item w3-button"><i class="material-icons">favorite</i></a>
+
+    <a href="{%url 'profile'%}" class="w3-bar-item w3-buttom"><i class="material-icons" style="color:red;">person</i></a>
+  </div>
+</div>
+
+
+
+</body>
+</html>
