@@ -1,16 +1,14 @@
-# potato
-Potato is an online directory written in python django-rest framework . This repository is the version 1.0.0 of potato 
-Features included in this repository
-Users can post like comment 
-Follow other users
-Verified users 
-Library
-Django 3.0
-Python 3.7
-Djang-pwa
-Pillow 2.1
-Django-channels 
+#potato
+<img src="https://i.ibb.co/SKqmC0Y/maskable-icon.png" style="border-radius:55px;">
+
+Potato is an open source social network which aims to build a safer community for all by providing privacy,ad-free and free of charge
+
+This repository consist of our server code which is written in python (Django web framework )
+You can contribute by adding an issue 
+Maintainers will see your contribution and will pull it to the prod
+New versions of code will be updated very soon
 
 
 
-
+You can visit the currently hosted website @
+https://potatomello.pythonanywhere.com
