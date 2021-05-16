@@ -299,7 +299,7 @@ def emailsend(request,slug):
     subject = 'Potato'
     username=request.user
     email=str(username)+'Two factor authentication is enabled in potato with this email .It wasn\'t you , You can disable this email address from this url potatomello.pythonanywhere.com'
-    send_mail('Potato',email,'sreedharks2003@gmail.com',[slug],fail_silently=False)
+    send_mail('Potato',email,'email@email.com',[slug],fail_silently=False)
     return redirect('link','covid19')
 def emaildont(request):
     request.user.profile.emaildontshowagain = 'True'
